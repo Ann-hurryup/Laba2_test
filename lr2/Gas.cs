@@ -10,7 +10,7 @@ namespace lr2
     {
         public Chemist Chemist { get; set; }
         public Transport Transport { get; set; }
-        public bool IsGasTest { get; set; }
+        public bool IsGasAnalyze { get; set; }
         public bool IsGasTrancport { get; set; }
 
         public Gas(Chemist chemist, Transport transport)
@@ -32,13 +32,13 @@ namespace lr2
         // Метод для анализа газа с указанием проводящего анализ химика
         public void AnalyseGas(Chemist chemist)
         {
-            IsGasTest = true;
+            IsGasAnalyze = true;
             Console.WriteLine($"Газ анализируется химиком {chemist.FullNameCh}");
         }
 
         public void NotAnalyseGas(Chemist chemist)
         {
-            IsGasTest = false;
+            IsGasAnalyze = false;
             Console.WriteLine("Газ не анализируется");
         }
     }
