@@ -6,7 +6,41 @@ using System.Threading.Tasks;
 
 namespace lr2
 {
-    internal class Gas
+    public class Gas
     {
+        public Chemist Chemist { get; set; }
+        public Transport Transport { get; set; }
+        public bool IsGasTest { get; set; }
+        public bool IsGasTrancport { get; set; }
+
+        public Gas(Chemist chemist, Transport transport)
+        {
+            Chemist = chemist;
+            Transport = transport;
+        }
+
+        public void TransportGas(Transport transport)
+        {
+            IsGasTrancport = true;
+            Console.WriteLine($"Газ транспортируется с помощью {transport.IdTransport}");
+        }
+        public void NotTransportGas(Transport transport)
+        {
+            IsGasTrancport = false;
+            Console.WriteLine("Газ не транспортируется");
+        }
+        // Метод для анализа газа с указанием проводящего анализ химика
+        public void AnalyseGas(Chemist chemist)
+        {
+            IsGasTest = true;
+            Console.WriteLine($"Газ анализируется химиком {chemist.FullNameCh}");
+        }
+
+        public void NotAnalyseGas(Chemist chemist)
+        {
+            IsGasTest = false;
+            Console.WriteLine("Газ не анализируется");
+        }
     }
+
 }
