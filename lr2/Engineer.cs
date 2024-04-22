@@ -10,38 +10,54 @@ namespace lr2
     {
         public string FullName { get; set; }
         public WorkType CurrentWork { get; set; }
+        public Well  Well{ get; set; }
+        public Field Field { get; set; }
+
+        public bool IsEngWell{  get; set; }
+        public bool IsEngDrill { get; set; }
 
         // Перечисление для типов работы
         public enum WorkType
         {
             Drill,
-            Extract,
-            Control
+            Extract
         }
 
-        public Engineer(string fullName, WorkType currentWork)
+        public Engineer(string fullName, WorkType currentWork, Well well, Field field)
         {
             FullName = fullName;
             CurrentWork = currentWork;
+            Well = well;
+            Field = field;
         }
 
-        public void DrillWell()
+        public void DrillField(Field field)
         {
-            Console.WriteLine($"{FullName} is drilling a well.");
+            IsEngDrill = true;
+            Console.WriteLine($" Инженер {FullName} бурит месторождение {field.IdField}");
             CurrentWork = WorkType.Drill;
         }
 
-        public void Extract()
+        public void ExtractWell(Well well)
         {
-            Console.WriteLine($"{FullName} is extracting resources.");
+            IsEngWell = true;
+            Console.WriteLine($"Инженер {FullName} добывает из скважины {well.IdWell}");
             CurrentWork = WorkType.Extract;
         }
 
-        public void Control ()
+        public void NotDrillField()
         {
-            Console.WriteLine($"{FullName} is supervising the process.");
-            CurrentWork = WorkType.Control;
+            IsEngDrill = false;
+            Console.WriteLine($" Инженер {FullName} не бурит месторождение");
         }
+
+        public void NotExtractWell(Well well)
+        {
+            IsEngWell = false;
+            Console.WriteLine($"Инженер {FullName} не добывает из скважины");
+        }
+
+
     }
 
 }

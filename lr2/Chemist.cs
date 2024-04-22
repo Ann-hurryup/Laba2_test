@@ -29,14 +29,14 @@ namespace lr2
             public void Analyze()
             {
                  IsAnalyze = true;
-                Console.WriteLine($"Chemist {FullNameCh} is performing analysis.");
+                Console.WriteLine($"Химик {FullNameCh} проводит анализ");
                 CurrentWorkCh = WorkTypeCh.Analyze;
             }
 
             public void QAReport()
             {
                 IsAnalyze = false;
-                Console.WriteLine($"Chemist {FullNameCh} is preparing a QA report.");
+                Console.WriteLine($"Химик {FullNameCh} делает отчет по качеству");
                 CurrentWorkCh = WorkTypeCh.QAReport;
             }
         }
