@@ -20,13 +20,13 @@ namespace lr2
         public void Trans()
         {
             IsTransporting = true;
-            Console.WriteLine("Transporting...");
+            Console.WriteLine("Ресурсы транспортируются ");
         }
 
         public void NotTran()
         {
             IsTransporting = false;
-            Console.WriteLine("Not transporting.");
+            Console.WriteLine("Ресурсы не транспортируются ");
         }
     }
 
