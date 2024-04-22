@@ -12,16 +12,16 @@ namespace lr2
         public bool IsExtract { get; set; }
 
 
-        public void Extract()
+        public void ExtractWell()
         {
             IsExtract = true;
-            Console.WriteLine("Extracting from the well...");
+            Console.WriteLine("Происходит добыча из скважины");
         }
 
-        public void NotExtract()
+        public void NotExtractWell()
         {
             IsExtract = false;
-            Console.WriteLine("Not extracting from the well.");
+            Console.WriteLine("Процесс добычи отсутствует");
         }
     }
 }

@@ -13,7 +13,7 @@ namespace lr2
         public Well  Well{ get; set; }
         public Field Field { get; set; }
 
-        public bool IsEngWell{  get; set; }
+        public bool IsEngExtract {  get; set; }
         public bool IsEngDrill { get; set; }
 
         // Перечисление для типов работы
@@ -40,7 +40,7 @@ namespace lr2
 
         public void ExtractWell(Well well)
         {
-            IsEngWell = true;
+            IsEngExtract = true;
             Console.WriteLine($"Инженер {FullName} добывает из скважины {well.IdWell}");
             CurrentWork = WorkType.Extract;
         }
@@ -53,7 +53,7 @@ namespace lr2
 
         public void NotExtractWell(Well well)
         {
-            IsEngWell = false;
+            IsEngExtract = false;
             Console.WriteLine($"Инженер {FullName} не добывает из скважины");
         }
 

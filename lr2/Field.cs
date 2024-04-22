@@ -16,13 +16,13 @@ public class Field
     public void DrillField()
     {
         IsDrill = true;
-        Console.WriteLine("Drilling..");
+        Console.WriteLine("Происходит бурение...");
     }
 
     public void NotDrillField()
     {
         IsDrill = false;
-        Console.WriteLine("Not Drilling");
+        Console.WriteLine("Бурение НЕ происходит");
     }
     
 }
