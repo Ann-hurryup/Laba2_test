@@ -8,19 +8,41 @@ using System.Threading.Tasks;
 
 namespace lr2.Tests
 {
-    [TestClass()]
+    [TestClass]
     public class WellTests
     {
-        [TestMethod()]
-        public void ExtractWellTest()
+        private Well well;
+
+        [TestInitialize]
+        public void Initialize()
         {
-            Assert.Fail();
+            well = new Well();
         }
 
-        [TestMethod()]
-        public void NotExtractWellTest()
+        [TestMethod]
+        public void TestIdWell()
         {
-            Assert.Fail();
+            Assert.AreEqual(well.IdWell, 0);
+        }
+
+        [TestMethod]
+        public void TestIsExtract()
+        {
+            Assert.IsFalse(well.IsExtract);
+        }
+
+        [TestMethod]
+        public void TestExtractWell()
+        {
+            well.ExtractWell();
+            Assert.IsTrue(well.IsExtract);
+        }
+
+        [TestMethod]
+        public void TestNotExtractWell()
+        {
+            well.NotExtractWell();
+            Assert.IsFalse(well.IsExtract);
         }
     }
 }
