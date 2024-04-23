@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using lr2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +16,7 @@ namespace lr2.Tests
             // Arrange
             string fullName = "Михаил Носков";
             Engineer.WorkType currentWork = Engineer.WorkType.Drill;
-            Well well = new Well();
+            Well well = new Well(0001, false);
             Field field = new Field();
 
             // Act
@@ -34,7 +33,7 @@ namespace lr2.Tests
         public void DrillField_MethodExecution_IsEngDrillTrue()
         {
             // Arrange
-            Engineer engineer = new Engineer("Михаил Носков", Engineer.WorkType.Drill, new Well(), new Field());
+            Engineer engineer = new Engineer("Михаил Носков", Engineer.WorkType.Drill, new Well(0001,true), new Field());
 
             // Act
             engineer.DrillField(engineer.Field);
@@ -47,7 +46,7 @@ namespace lr2.Tests
         public void ExtractWell_MethodExecution_IsEngExtractTrue()
         {
             // Arrange
-            Engineer engineer = new Engineer("Михаил Носков", Engineer.WorkType.Extract, new Well(), new Field());
+            Engineer engineer = new Engineer("Михаил Носков", Engineer.WorkType.Extract, new Well(0001, true), new Field());
 
             // Act
             engineer.ExtractWell(engineer.Well);
@@ -60,7 +59,7 @@ namespace lr2.Tests
         public void NotDrillField_MethodExecution_IsEngDrillFalse()
         {
             // Arrange
-            Engineer engineer = new Engineer("Михаил Носков", Engineer.WorkType.Drill, new Well(), new Field());
+            Engineer engineer = new Engineer("Михаил Носков", Engineer.WorkType.Drill, new Well(0001, false), new Field());
             engineer.IsEngDrill = true; // Assume drilling was started
 
             // Act
@@ -74,7 +73,7 @@ namespace lr2.Tests
         public void NotExtractWell_MethodExecution_IsEngExtractFalse()
         {
             // Arrange
-            Engineer engineer = new Engineer("Михаил Носков", Engineer.WorkType.Extract, new Well(), new Field());
+            Engineer engineer = new Engineer("Михаил Носков", Engineer.WorkType.Extract, new Well(0001, false), new Field());
             engineer.IsEngExtract = true; // Assume extraction was started
 
             // Act

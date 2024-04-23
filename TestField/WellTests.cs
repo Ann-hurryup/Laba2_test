@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using lr2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +15,13 @@ namespace lr2.Tests
         [TestInitialize]
         public void Initialize()
         {
-            well = new Well();
+            well = new Well(0001, false);
         }
 
         [TestMethod]
         public void TestIdWell()
         {
-            Assert.AreEqual(well.IdWell, 0);
+            Assert.AreEqual(well.IdWell, 1);
         }
 
         [TestMethod]
