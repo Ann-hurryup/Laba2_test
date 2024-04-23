@@ -15,7 +15,7 @@ namespace lr2.Tests
         public void Constructor_InitializeProperties_CorrectInitialization()
         {
             // Arrange
-            string fullName = "Дмитрий Иванов";
+            string fullName = "Михаил Носков";
             Engineer.WorkType currentWork = Engineer.WorkType.Drill;
             Well well = new Well();
             Field field = new Field();

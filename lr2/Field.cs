@@ -14,6 +14,7 @@ public class Field
     public int IdField { get; set; }
     public bool IsDrill { get; set; }
 
+   
     public void DrillField()
     {
         IsDrill = true;
