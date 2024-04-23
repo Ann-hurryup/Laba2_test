@@ -16,7 +16,7 @@ namespace lr2.Tests
         public void Constructor_InitializeProperties_CorrectInitialization()
         {
             // Arrange
-            string fullName = "Иван Иванов";
+            string fullName = "Петр Петров";
             Chemist.WorkTypeCh workType = Chemist.WorkTypeCh.Analyze;
 
             // Act
